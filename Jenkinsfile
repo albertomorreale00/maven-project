@@ -1,9 +1,10 @@
 pipeline {
   agent any
   
-  stages('build') {
+  stages {
+     stage('build') {
     steps {
-      'mvn clean package'
+      sh 'mvn clean package'
     }
     post {
       success {
@@ -12,4 +13,6 @@ pipeline {
       }
     }
   }
+  }
+
 }
